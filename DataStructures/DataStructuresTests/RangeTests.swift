@@ -16,7 +16,7 @@ class RangeTests: XCTestCase {
 
     func testEmptyDoesNotContain1_2() {
         let tree = RangeImplementation<Int>()
-        let result = tree.contains(integer: 1)
+        let result = tree.contains(element: 1)
         XCTAssert(result == false)
     }
     
@@ -24,7 +24,7 @@ class RangeTests: XCTestCase {
         let rangeBeingInserted = Range<Int>(uncheckedBounds: (lower: 1, upper: 2))
         let tree = RangeImplementation<Int>()
         tree.insert(range: rangeBeingInserted)
-        let containsResult = tree.contains(integer: 1)
+        let containsResult = tree.contains(element: 1)
         XCTAssert(containsResult == true)
     }
     
@@ -32,7 +32,7 @@ class RangeTests: XCTestCase {
         let rangeBeingInserted = Range<Int>(uncheckedBounds: (lower: 1, upper: 2))
         let tree = RangeImplementation<Int>()
         tree.insert(range: rangeBeingInserted)
-        let containsResult = tree.contains(integer: 2)
+        let containsResult = tree.contains(element: 2)
         XCTAssert(containsResult == false)
     }
     
@@ -40,22 +40,22 @@ class RangeTests: XCTestCase {
         let tree = RangeImplementation<Int>()
         tree.insert(range: 1..<3)
         tree.insert(range: 10..<13)
-        XCTAssert(tree.contains(integer: 1))
-        XCTAssert(tree.contains(integer: 11))
-        XCTAssert(!tree.contains(integer: 3))
-        XCTAssert(!tree.contains(integer: 13))
-        XCTAssert(!tree.contains(integer: -10))
-        XCTAssert(!tree.contains(integer: 20))
+        XCTAssert(tree.contains(element: 1))
+        XCTAssert(tree.contains(element: 11))
+        XCTAssert(!tree.contains(element: 3))
+        XCTAssert(!tree.contains(element: 13))
+        XCTAssert(!tree.contains(element: -10))
+        XCTAssert(!tree.contains(element: 20))
     }
     
     func testInsertOverlappingRanges() {
         let tree = RangeImplementation<Int>()
         tree.insert(range: 1..<3)
         tree.insert(range: -2..<8)
-        XCTAssert(tree.contains(integer: 1))
-        XCTAssert(tree.contains(integer: 7))
-        XCTAssert(!tree.contains(integer: 8))
-        XCTAssert(!tree.contains(integer: -3))
+        XCTAssert(tree.contains(element: 1))
+        XCTAssert(tree.contains(element: 7))
+        XCTAssert(!tree.contains(element: 8))
+        XCTAssert(!tree.contains(element: -3))
     }
     
     

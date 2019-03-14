@@ -11,7 +11,7 @@ import Foundation
 protocol RangeContainer {
     associatedtype RangeType: Comparable
     func insert(range: Range<RangeType>) -> Void
-    func contains(integer: RangeType) -> Bool
+    func contains(element: RangeType) -> Bool
 }
 
 class RangeImplementation<Element:Comparable> : RangeContainer {
@@ -79,14 +79,14 @@ class RangeImplementation<Element:Comparable> : RangeContainer {
         return probingIndex
     }
     
-    func contains(integer: Element) -> Bool {
+    func contains(element: Element) -> Bool {
         if ranges.isEmpty {
             return false
         }
         
         // Find the highest index that contains a range whose lowerbound is lower than or equal to the searched for integer
-        if let relevantIndexToTest = RangeImplementation.findIndex(forLowerBound: integer, inRanges: self.ranges) {
-            return ranges[relevantIndexToTest].contains(integer)
+        if let relevantIndexToTest = RangeImplementation.findIndex(forLowerBound: element, inRanges: self.ranges) {
+            return ranges[relevantIndexToTest].contains(element)
         }
         return false
     }
