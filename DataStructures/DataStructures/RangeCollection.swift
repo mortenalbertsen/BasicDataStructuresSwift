@@ -9,15 +9,15 @@
 import Foundation
 
 protocol RangeContainer {
-    func insert(range: Range<Int>) -> Void
-    func contains(integer: Int) -> Bool
+    associatedtype RangeType: Comparable
+    func insert(range: Range<RangeType>) -> Void
+    func contains(integer: RangeType) -> Bool
 }
 
-class RangeImplementation : RangeContainer {
+class RangeImplementation<Element:Comparable> : RangeContainer {
+    var ranges = [Range<Element>]()
     
-    var ranges = [Range<Int>]()
-    
-    func insert(range rangeToInsert: Range<Int>) {
+    func insert(range rangeToInsert: Range<Element>) {
         if ranges.isEmpty {
             // Easy - insert immediately
             ranges.append(rangeToInsert)
@@ -55,7 +55,7 @@ class RangeImplementation : RangeContainer {
      Callers will themselves have to verify whether there is an actual overlap (or not) on (the range on) the returned index.
      
     */
-    func findIndexOfInsertion(forLowerBound lowerBound: Int) -> Int {
+    func findIndexOfInsertion(forLowerBound lowerBound: Element) -> Int {
         if ranges.isEmpty {
             return 0
         }
@@ -79,7 +79,7 @@ class RangeImplementation : RangeContainer {
         return probingIndex
     }
     
-    func contains(integer: Int) -> Bool {
+    func contains(integer: Element) -> Bool {
         if ranges.isEmpty {
             return false
         }
@@ -92,7 +92,7 @@ class RangeImplementation : RangeContainer {
     }
     
     
-    static func findIndex(forLowerBound lowerBound: Int, inRanges ranges: [Range<Int>]) -> Int? {
+    static func findIndex(forLowerBound lowerBound: Element, inRanges ranges: [Range<Element>]) -> Int? {
         
         if ranges.isEmpty {
             return nil
