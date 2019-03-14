@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4C21B122395861008C7C5C /* RangeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C21B022395861008C7C5C /* RangeCollection.swift */; };
 		5A7BF2E12236F10200EA168A /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7BF2D72236F10200EA168A /* DataStructures.framework */; };
-		5A7BF2E62236F10200EA168A /* DataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BF2E52236F10200EA168A /* DataStructuresTests.swift */; };
 		5A7BF2E82236F10200EA168A /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A7BF2DA2236F10200EA168A /* DataStructures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A9CAFC12236F6F000F435E1 /* RangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9CAFC02236F6F000F435E1 /* RangeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +24,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A4C21B022395861008C7C5C /* RangeCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeCollection.swift; sourceTree = "<group>"; };
 		5A7BF2D72236F10200EA168A /* DataStructures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataStructures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7BF2DA2236F10200EA168A /* DataStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStructures.h; sourceTree = "<group>"; };
 		5A7BF2DB2236F10200EA168A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A7BF2E02236F10200EA168A /* DataStructuresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A7BF2E52236F10200EA168A /* DataStructuresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresTests.swift; sourceTree = "<group>"; };
 		5A7BF2E72236F10200EA168A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A9CAFC02236F6F000F435E1 /* RangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		5A7BF2D92236F10200EA168A /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				5A4C21B022395861008C7C5C /* RangeCollection.swift */,
 				5A7BF2DA2236F10200EA168A /* DataStructures.h */,
 				5A7BF2DB2236F10200EA168A /* Info.plist */,
 			);
@@ -80,7 +83,7 @@
 		5A7BF2E42236F10200EA168A /* DataStructuresTests */ = {
 			isa = PBXGroup;
 			children = (
-				5A7BF2E52236F10200EA168A /* DataStructuresTests.swift */,
+				5A9CAFC02236F6F000F435E1 /* RangeTests.swift */,
 				5A7BF2E72236F10200EA168A /* Info.plist */,
 			);
 			path = DataStructuresTests;
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4C21B122395861008C7C5C /* RangeCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A7BF2E62236F10200EA168A /* DataStructuresTests.swift in Sources */,
+				5A9CAFC12236F6F000F435E1 /* RangeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +399,7 @@
 		5A7BF2EF2236F10200EA168A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N935DW9NJX;
 				INFOPLIST_FILE = DataStructuresTests/Info.plist;
@@ -413,6 +418,7 @@
 		5A7BF2F02236F10200EA168A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N935DW9NJX;
 				INFOPLIST_FILE = DataStructuresTests/Info.plist;
